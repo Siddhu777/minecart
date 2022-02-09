@@ -1,0 +1,53 @@
+<div fxLayoutAlign="center center"  class="mainContaier">
+    <div fxLayoutAlign="center center" >
+        <div fxLayout="column" class="registerContainer">
+            <div fxLayout="row" class="toolBarRow" fxLayoutAlign="center center">
+                <mat-toolbar class="toolBar" fxLayoutAlign="center center">
+                    <span>SignUp</span>
+                </mat-toolbar>
+            </div>
+            <form [formGroup]="signUpForm">
+                <div fxLayout="row" fxLayout.xs="column"  class="eleRow" fxLayoutGap="10px">
+                    <mat-form-field appearance="legacy" >
+                        <mat-label>Name</mat-label>
+                        <input matInput placeholder="Enter Name" formControlName="Name" >
+                    </mat-form-field>
+                    <mat-form-field appearance="legacy" >
+                        <mat-label>Mobile Number</mat-label>
+                        <input matInput formControlName="Mobile">
+                    </mat-form-field>
+                    <mat-form-field appearance="legacy" >
+                        <mat-label>Email</mat-label>
+                        <input matInput formControlName="Email">
+                    </mat-form-field>
+                </div> 
+                <div fxLayout="row" fxLayout.xs="column"  class="eleRow" fxLayoutGap="10px">
+                    <mat-form-field appearance="legacy" >
+                        <mat-label>Select User Type</mat-label>
+                        <mat-select formControlName="UserTypeId">
+                            <mat-option *ngFor="let userType of userTypes" [value]="userType.UserTypeId">{{userType.UserTypeName}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                 
+                    <mat-form-field appearance="legacy" >
+                        <mat-label>Address</mat-label>
+                        <input matInput formControlName="Address">
+                    </mat-form-field>
+                    <mat-form-field appearance="legacy" >
+                        <mat-label>Password</mat-label>
+                        <input matInput formControlName="Password">
+                    </mat-form-field>
+                    
+                </div>
+                
+                <div fxLayout="row"  fxLayoutAlign="center center"  fxLayoutGap="10px">
+                    <button type="submit" mat-raised-button color="primary" class="btnregister" fxFlex 
+                        (click)="fnSignUp()"
+                    >SignUp</button>
+                    <button mat-raised-button color="primary" class="btnregister" routerLink="/" fxFlex>Login</button>
+                </div>
+            </form> 
+            
+        </div>
+    </div>
+</div>

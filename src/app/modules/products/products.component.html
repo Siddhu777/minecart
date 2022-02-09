@@ -1,0 +1,14 @@
+<div  class="container">
+   <div class="row">
+    <ng-container *ngFor="let product of products">
+        <div   class="card col-md-3">
+            <img style="width: 62px; margin-top: 5px;" src="https://rukminim1.flixcart.com/image/580/696/kkh6zrk0/jewellery-set/o/w/z/gt-ns-862-matushri-art-original-imafzt9teacakjyn.jpeg?q=50" alt="">
+            <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{product.Title}}</h5>
+            <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{product.Description}}</p>
+            <p><strong>Price:</strong> ${{product.Price}}</p>
+            <button class="btn btn-primary" (click)="addtocart(product)">Add to cart</button>
+        </div>
+    </ng-container>
+   </div>
+
+</div>

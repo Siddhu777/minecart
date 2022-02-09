@@ -1,0 +1,28 @@
+
+<div fxLayout="column" fxLayoutAlign="center center" class="container">
+    <form [formGroup]="signinForm" >
+        <div fxLayout="row" class="toolBarRow" fxLayoutAlign="center center">
+            <mat-toolbar class="toolBar" fxLayoutAlign="center center">
+                <span>Login</span>
+            </mat-toolbar>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <mat-form-field appearance="legacy">
+                <mat-label>User Name</mat-label>
+                <input matInput formControlName="Email"  placeholder="Enter User Name">
+                <mat-icon matSuffix>person</mat-icon>
+            </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <mat-form-field appearance="legacy">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="Password" placeholder="Enter Password">
+                <mat-icon matSuffix>lock</mat-icon>
+            </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center" class="eleRow" fxLayoutGap="10px">
+            <button mat-raised-button  color="primary" class="btnregister" (click)="loginUser()" type="submit" fxFlex>Login</button>
+            <button mat-raised-button color="primary" class="btnregister" routerLink="/signup" fxFlex>Signup</button>
+        </div>
+    </form>
+</div>
